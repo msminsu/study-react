@@ -56,27 +56,21 @@ export default App;
 
 
 ```
-#### props 와 state
-
-props : 부모 -> 자식 한테 값을 전달
-
-state : 컴포넌트가  ㅋ자신이 가지고 있고
-state는 내부에서 변경할 수 있다. 
-변경 할때는 언제나 setState라는 함수를 사용
-
-
-
-#### LifeCycle API
-
-컴포넌트가 
-1. 나타날때 ( Mounting ) : 초기 설정
-2. 업데이트 될때 ( Updating )
-3. 사라질때 ( Unmounting )
 
 
 
 
 
+
+### create-react-app 
+ 1. node js 설치
+ 2. yarn 설치
+
+
+~~~
+// react project 생성
+npx create-react-app <폴더명>
+~~~
 
 
 
