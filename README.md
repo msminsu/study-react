@@ -70,18 +70,42 @@ export default App;
 ~~~
 // react project 생성
 npx create-react-app <폴더명>
+
 ~~~
 
 
 
 
 
+자식에서 부모로  데이터 전다 : Props 로
+
+불변성 유지 : 기존의 배열은 수정하지않고  
+push 사용하지 않고
+concat 을사용
+
+
+비구조 할당 문법 
+const {a}  =  object;
+
+
+map : 배열을 전체적으로 변환할때 사용
+
+const num =[1,2,3];
+const squared = num.map(n=>n*n);
 
 
 
 
+slice 
+const nums = [1,2,3,4,5];
+nums.slice(0,2);
 
 
+filter
+const num =[1,2,3,4,5]
+
+num.filter(n => n>3);
+num.filter(n => n !== 3);
 
 
 

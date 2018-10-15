@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.titleContainer{
+	font-family: 'Poppins', sans-serif;
+	h1{
+		font-size: 90px;
+		margin: 0;
+		line-height: 1.1em;
+	}
+}
+.titleWrapper{
+	color: #D4BBAB;
+	cursor: pointer;
+}
+.cloneWrapper{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #E2dcca;
+	
+}
