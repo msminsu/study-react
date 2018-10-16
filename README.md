@@ -88,7 +88,7 @@ concat 을사용
 const {a}  =  object;
 
 
-map : 배열을 전체적으로 변환할때 사용
+map : 배열을 특정 함수를 사용하여 전체적으로 변환할때 사용하고 싶을때 사용
 
 const num =[1,2,3];
 const squared = num.map(n=>n*n);

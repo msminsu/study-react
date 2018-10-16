@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
 import PhoneForm from './components/PhoneForm';
+import PhoneInfoList from './components/PhoneInfoList';
 
 class App extends Component {
   
-  id = 0;
+  id = 3;
 
 
   state={
-    information:[],
+    information:[
+     { 
+      id:0,
+      name:'홍길동',
+      phone:'010-0000-1111'
+    },
+    {
+      id:1,
+      name:'김영신',
+      phone:'010-0000-2222'
+    },
+    {
+      id:2,
+      name:'아이텍',
+      phone:'010-0000-3333'
+    }
+    ],
+
   }
 
   handleCreate = (data)=>{
@@ -31,11 +49,40 @@ class App extends Component {
     })
   }
 
+  handleRemove = (id) =>{
+    const {information} =this.state;
+    this.setState({
+      ifromation : information.filter(info=>info.id !== id )
+    })
+  }
+
+  handleUpdate = (id, data)=>{
+    const {information} = this.state;
+    this.setState({
+      information: information.map(
+        info=>{
+          if(info.id === id){
+            return {
+              id,
+              ...data,
+            }
+          }
+          return info;
+        }
+      )
+    });
+  }
+
   render() {
     return (
       <div>
        <PhoneForm onCreate={this.handleCreate}></PhoneForm>
-       {JSON.stringify(this.state.information)}
+       {/* {JSON.stringify(this.state.information)} */}
+       <PhoneInfoList 
+          data={this.state.information} 
+          onRemove={this.handleRemove}
+          onUpdate={this.handleUpdate}
+       />
       </div>
     );
   }
