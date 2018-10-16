@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Phoneinfo from './Phoneinfo';
+import PhoneInfo from './PhoneInfo';
 
 
 class PhoneInfoList extends Component {
