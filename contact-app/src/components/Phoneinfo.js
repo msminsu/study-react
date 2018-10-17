@@ -8,6 +8,16 @@ class PhoneInfo extends Component {
 		phone : ''
 	}
 
+
+	// 필요한 부분만 업데이트
+	shouldComponentUpdate(nextProps, nextState) {
+		if(this.state !== nextState){
+			return true;
+		}
+
+		return this.props.info !== nextProps.info;
+	}
+	
 	handleRemove = ()=>{
 		const {info, onRemove}=this.props;
 		onRemove(info.id);

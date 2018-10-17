@@ -25,9 +25,14 @@ class App extends Component {
       phone:'010-0000-3333'
     }
     ],
-
+    keyword : '',
   }
 
+  handleChange = (e)=>{
+    this.setState({
+      keyword : e.target.value,
+    });
+  }
   handleCreate = (data)=>{
    
     /* this.setState({
@@ -52,7 +57,7 @@ class App extends Component {
   handleRemove = (id) =>{
     const {information} =this.state;
     this.setState({
-      ifromation : information.filter(info=>info.id !== id )
+      information : information.filter(info=>info.id !== id )
     })
   }
 
@@ -78,8 +83,15 @@ class App extends Component {
       <div>
        <PhoneForm onCreate={this.handleCreate}></PhoneForm>
        {/* {JSON.stringify(this.state.information)} */}
+       <input
+       value={this.state.keyword} 
+       onChange = {this.handleChange}
+       placeholder ="검색 ..."
+       />
        <PhoneInfoList 
-          data={this.state.information} 
+          data={this.state.information.filter(
+            info => info.name.indexOf(this.state.keyword) > -1
+          )} 
           onRemove={this.handleRemove}
           onUpdate={this.handleUpdate}
        />
